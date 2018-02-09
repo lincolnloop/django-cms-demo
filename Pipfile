@@ -20,7 +20,7 @@ djangocms-video = "*"
 djangocms-audio = "*"
 dj-database-url = "*"
 uwsgi = "*"
-"psycopg2" = "*"
+"psycopg2-binary" = "*"
 
 
 [dev-packages]
