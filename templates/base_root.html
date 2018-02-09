@@ -1,0 +1,83 @@
+<!doctype html>{% load i18n staticfiles cms_tags sekizai_tags %}
+<html lang="{{ LANGUAGE_CODE }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>
+        {% block title %}
+            {% page_attribute page_title %} - {{ request.site.name }}
+        {% endblock title %}
+    </title>
+    {% block meta_tags %}
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="description" content="{% spaceless %}
+            {% block meta_description %}
+                {% page_attribute meta_description %}
+            {% endblock %}
+        {% endspaceless %}">
+    {% endblock meta_tags %}
+    <link rel="apple-touch-icon" href="{% static 'favicon.png' %}">
+    <link rel="icon" type="image/png" href="{% static 'favicon.png' %}">
+    <!--[if IE]><link rel="shortcut icon" href="{% static 'favicon.ico' %}"><![endif]-->
+    <style>
+        body { visibility: hidden; }
+        @media (max-width: 600px) {
+            body { visibility: visible; }
+            .feature-visual img { width: 100%; }
+            .sr-only, .skip-links, .navbar-collapse { display: none; }
+        }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="{% static 'js/libs/html5shiv.min.js' %}"></script>
+    <script src="{% static 'js/libs/respond.min.js' %}"></script>
+    <![endif]-->
+    {% render_block "css" %}
+    {% block extrahead %}{% endblock %}
+    {{ ALDRYN_SNAKE.render_head }}
+</head>
+<body id="page-top" class="noscript lang-{{ LANGUAGE_CODE }} {% block body_class %}tpl-root{% endblock %}">
+{% include "includes/analytics.html" %}
+{% cms_toolbar %}
+
+{% block extend_root %}{% endblock %}
+
+{# prevent blocking css for page speed reasons #}
+<noscript id="deferred-styles">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</noscript>
+<script>
+    var loadDeferredStyles = function() {
+        var addStylesNode = document.getElementById('deferred-styles');
+        var replacement = document.createElement('div');
+        replacement.innerHTML = addStylesNode.textContent;
+        document.body.appendChild(replacement)
+        addStylesNode.parentElement.removeChild(addStylesNode);
+    };
+    var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+              webkitRequestAnimationFrame || msRequestAnimationFrame;
+    if (raf) raf(function() { window.setTimeout(loadDeferredStyles, 0); });
+    else window.addEventListener('load', loadDeferredStyles);
+</script>
+
+<script src="{% static 'js/libs/jquery.min.js' %}"></script>
+<script src="{% static 'js/libs/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/libs/class.min.js' %}"></script>
+<script src="{% static 'js/libs/outdatedBrowser.min.js' %}"></script>
+<script src="{% static 'js/addons/cl.utils.js' %}"></script>
+<script src="{% static 'js/base.js' %}"></script>
+{% render_block "js" %}
+{% block extrafoot %}{% endblock %}
+{{ ALDRYN_SNAKE.render_tail }}
+<div class="browser-outdated" id="outdated" hidden="hidden">
+    <noscript><h3>{% trans "Please enable JavaScript" %}</h3></noscript>
+    <h3>{% trans "Your browser is out-of-date!" %}</h3>
+    <p>{% trans "Update your browser to view this website correctly." %}</p>
+    <p>
+        <a href="http://outdatedbrowser.com/" class="btn btn-lg btn-outline" id="btnUpdateBrowser">
+            {% trans "Update my browser now" %}
+        </a>
+    </p>
+    <p class="last"><a href="#" id="btnCloseUpdateBrowser" title="Close">&times;</a></p>
+</div>
+</body>
+</html>

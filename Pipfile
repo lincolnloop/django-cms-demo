@@ -1,0 +1,27 @@
+[[source]]
+
+url = "https://pypi.python.org/simple"
+verify_ssl = true
+name = "pypi"
+
+
+[packages]
+
+django-cms = "*"
+djangocms-admin-style = "*"
+djangocms-text-ckeditor = "*"
+django-filer = "*"
+djangocms-link = "*"
+djangocms-picture = "*"
+djangocms-snippet = "*"
+djangocms-style = "*"
+djangocms-googlemap = "*"
+djangocms-video = "*"
+djangocms-audio = "*"
+dj-database-url = "*"
+uwsgi = "*"
+"psycopg2" = "*"
+
+
+[dev-packages]
+

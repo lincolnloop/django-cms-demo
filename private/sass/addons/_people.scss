@@ -1,0 +1,46 @@
+// #############################################################################
+// PEOPLE
+
+// adds styles for /people/
+
+.aldryn-group-list {
+    @include make-row();
+    small {
+        color: $text-color !important;
+    }
+    .aldryn-people-article {
+        @include make-lg-column(8);
+        min-height: 350px;
+        margin-bottom: $line-height-computed;
+    }
+    img {
+        max-width: 100%;
+    }
+}
+
+.aldryn-people-article {
+    h2 {
+        @extend .h3;
+        font-weight: 600;
+    }
+    small {
+        display: block;
+        color: #fff;
+        font-size: $font-size-small;
+        font-weight: 200;
+        margin-top: $line-height-computed / 2;
+    }
+}
+
+.aldryn-people-detail {
+    clear: both;
+    overflow: hidden;
+    margin: 0 0 $line-height-computed * 2;
+    .visual {
+        float: left;
+        padding-right: $line-height-computed;
+    }
+    h2 {
+        padding-top: 10px;
+    }
+}

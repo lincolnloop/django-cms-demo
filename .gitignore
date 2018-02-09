@@ -10,7 +10,5 @@ Thumbs.db
 *.pyo
 db.sqlite3
 
-# ignore themes
-/templates
-/static
-boilerplate.json
+
+/collected-static

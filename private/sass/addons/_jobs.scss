@@ -1,0 +1,52 @@
+// #############################################################################
+// JOBS
+
+// adds styles for /jobs/
+
+// custom title for right navigation
+.aldryn-jobs-sidebar {
+    h3 {
+        display: inline-block;
+        font-size: 14px;
+        line-height: 1.4;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        padding-bottom: 5px;
+        border-bottom: 2px solid $brand-primary;
+    }
+}
+
+.aldryn-jobs-list .aldryn-jobs-article {
+    border-bottom: 1px solid $gray-light;
+
+    .lead {
+        font-size: $font-size-base;
+    }
+    hr {
+        display: none;
+    }
+    .aldryn-jobs-meta {
+        margin: 0 0 $line-height-computed / 2;
+    }
+}
+
+.aldryn-jobs-list {
+    margin-bottom: $line-height-computed * 2;
+}
+
+.aldryn-jobs-detail .aldryn-jobs-article {
+    hr {
+        margin: $line-height-computed / 2 0;
+    }
+    h3 {
+        font-size: $font-size-h2;
+    }
+}
+
+.aldryn-jobs-form {
+    margin-top: $line-height-computed;
+}
+
+.aldryn-jobs-detail {
+    margin-bottom: $line-height-computed;
+}
