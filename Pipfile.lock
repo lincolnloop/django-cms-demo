@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "22fe3469d0cfb0daf160ca47b28dd8136015df53b788b2263cf06f33c7f36491"
+            "sha256": "579bacb558bd5b56dc0cc9160292bf04cdd93974e73edb28dd183520ad919947"
         },
         "host-environment-markers": {
             "implementation_name": "cpython",
@@ -27,12 +27,21 @@
         ]
     },
     "default": {
+        "47f0bae": {
+            "file": "https://github.com/bxm156/django-storages/archive/bmarty_fix_boto3_content_type.zip"
+        },
         "boto3": {
-            "hashes": [],
+            "hashes": [
+                "sha256:e76a1c6ef70ac39dc5e58c87e2985034362d0294c8c0676243db46efa1801c1a",
+                "sha256:ac5c194a2b03676f9a3435b8a4ee168285fc1fc1037e6c6a641f654a12724995"
+            ],
             "version": "==1.5.26"
         },
         "botocore": {
-            "hashes": [],
+            "hashes": [
+                "sha256:83197c3eb264b202109c65e4403442252938fbc99a28e44de8f76d27a7e73ea8",
+                "sha256:a80f926d0b5d0c60107b95f03ad946716620b733469d9ec5e976dd81363988d6"
+            ],
             "version": "==1.8.40"
         },
         "dj-database-url": {
@@ -97,13 +106,6 @@
                 "sha256:39c5d16ad694aa78278ca84fdc7b9f953ebcf94e2fc95b68c875d02014303260"
             ],
             "version": "==0.10.0"
-        },
-        "django-storages": {
-            "hashes": [
-                "sha256:ab6be1538cf29511400bce83d0e5ca74d2e935cad82086063bcf5e7edacc1661",
-                "sha256:bc8e4c1f483608c5dd1212072fd41042f3ef2d2a2896ec4fb12dbc62c82996a0"
-            ],
-            "version": "==1.6.5"
         },
         "django-treebeard": {
             "hashes": [

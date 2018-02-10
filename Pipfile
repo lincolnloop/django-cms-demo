@@ -22,7 +22,8 @@ dj-database-url = "*"
 uwsgi = "*"
 "psycopg2-binary" = "*"
 "boto3" = "*"
-django-storages = "*"
+#django-storages = "*"
+"47f0bae" = {file = "https://github.com/bxm156/django-storages/archive/bmarty_fix_boto3_content_type.zip"}
 
 
 [dev-packages]
