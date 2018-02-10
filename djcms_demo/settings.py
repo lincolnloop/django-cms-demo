@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'sekizai',
     # 'reversion',
     # requirements for django-filer
+    'storages',
     'filer',
     'easy_thumbnails',
     'mptt',
@@ -174,15 +175,31 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-# we need to add additional configuration for filer etc.
-MEDIA_URL = '/media/'
-
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'collected-static')
 
+
+MEDIA_URL = '/media/'
+if 'AWS_ACCESS_KEY_ID' in os.environ:
+    DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
+    # Amazon S3 settings.
+    AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID", "")
+    AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY", "")
+    AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME", "")
+    AWS_AUTO_CREATE_BUCKET = False
+    AWS_HEADERS = {"Cache-Control": "public, max-age=86400"}
+    AWS_S3_FILE_OVERWRITE = False
+    AWS_QUERYSTRING_AUTH = False
+    AWS_S3_SECURE_URLS = True
+    AWS_REDUCED_REDUNDANCY = False
+    AWS_IS_GZIPPED = False
+
+    MEDIA_ROOT = '/'
+    MEDIA_URL = '//s3.amazonaws.com/%s/'.format(AWS_STORAGE_BUCKET_NAME)
 
 # django CMS settings
 # http://docs.django-cms.org/en/latest/

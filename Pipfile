@@ -21,6 +21,8 @@ djangocms-audio = "*"
 dj-database-url = "*"
 uwsgi = "*"
 "psycopg2-binary" = "*"
+"boto3" = "*"
+django-storages = "*"
 
 
 [dev-packages]
