@@ -1,11 +1,3 @@
-.row {
-    display: flex;
-}
-
-.card-body {
-    height: 100%;
-}
-
 img {
   display: inline-block;
   margin-bottom: 20px;
@@ -20,6 +12,10 @@ img {
   margin-bottom: 20px;
 }
 
+.row {
+   display: flex;
+}
+
 .block-header {
   margin-bottom: 20px;
 }
@@ -29,6 +25,7 @@ img {
 }
 
 .card-body {
+  height: 100%;
   padding: 10px;
   border: 1px solid #CCC;
   border-top: 4px solid #777;
