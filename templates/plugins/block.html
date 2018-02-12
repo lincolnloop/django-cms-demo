@@ -1,6 +1,15 @@
 {% load cms_tags %}
-<h1>{{ instance.title }}</h1>
-<p>{{ instance.content }}</p>
-{% for plugin in instance.child_plugin_instances %}
-    {% render_plugin plugin %}
-{% endfor %}
+<div class="block">
+  <header class="block-header">
+    <h1>{{ instance.title }}</h1>
+    <p>{{ instance.content }}</p>
+  </header>
+
+  {% if instance.child_plugin_instances %}
+  <div class="row">
+    {% for plugin in instance.child_plugin_instances %}
+      {% render_plugin plugin %}
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
