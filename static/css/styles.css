@@ -16,3 +16,11 @@ img {
   border-top: 4px solid #777;
   background: #FFF;
 }
+
+.footer {
+  margin-top: 40px;
+  padding-top: 40px;
+  padding-bottom: 80px;
+  background: #292929;
+  color: #FFF;
+}
