@@ -68,6 +68,10 @@ INSTALLED_APPS = [
     'djangocms_googlemap',
     'djangocms_video',
     'djangocms_audio',
+
+    # current app
+    'djcms_demo',
+
 ]
 
 MIDDLEWARE_CLASSES = (

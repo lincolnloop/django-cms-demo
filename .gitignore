@@ -10,6 +10,6 @@ Thumbs.db
 *.pyo
 db.sqlite3
 .env
-
+*.db
 
 /collected-static
