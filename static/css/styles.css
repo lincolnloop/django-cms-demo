@@ -1,3 +1,11 @@
+.row {
+    display: flex;
+}
+
+.card-body {
+    height: 100%;
+}
+
 img {
   display: inline-block;
   margin-bottom: 20px;
